@@ -13,9 +13,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #d8c9c9;
-  color: #fff;
-  padding: 10px 10%;
+  background-color: white;
+  padding: 4px 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +25,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 30%;
+  padding-left: 25%;
   margin-left: auto;
 }
 
@@ -41,7 +40,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: black;
   transition: color 0.3s;
 }
 
@@ -55,25 +54,54 @@ nav ul li a:hover {
 }
 
 .logo img {
-  height: 50px;
-  vertical-align: middle;
+  height: 68px;
+  vertical-align: auto;
+  padding-left: -50%;
 }
 /* Hero section styles */
 .hero {
-  background-image: url("officemeet.jpg");
+  position: relative;
+  background-image: linear-gradient(rgba(240, 255, 240, 0), #ca2d35),
+    url("officemeet.jpg");
   background-size: cover;
   color: #fff;
   text-align: center;
-  padding: 350px 0;
+  padding: 350px 8%;
 }
-
+.hero p {
+  position: absolute;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 40px 4% 40px;
+  margin-top: 5%;
+  color: white;
+  line-height: 2;
+}
 .hero h2 {
-  font-size: 36px;
+  position: absolute;
+  top: 43%;
+  left: 28%;
+  font-size: 45px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .btn {
+  position: absolute;
   display: inline-block;
+  bottom: 10%;
+  right: 42%;
+  padding: 10px 20px;
+  background-color: #da1a1a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.btn2 {
+  display: inline-block;
+  bottom: 10%;
+  right: 42%;
   padding: 10px 20px;
   background-color: #da1a1a;
   color: #fff;
@@ -89,7 +117,7 @@ nav ul li a:hover {
 /* Services section styles */
 .services {
   background-color: #f7f7f7;
-  padding: 100px 0;
+  padding: 15px 10%;
   text-align: center;
 }
 
@@ -102,6 +130,60 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
+.service2 {
+  margin-bottom: 40px;
+}
+.service2 h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style for the mission and vision sections */
+.services .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.service,
+.service2 {
+  flex: 0 0 40%;
+}
+
+/* Style for the images */
+.service-image,
+.service2-image {
+  flex: 0 0 48%;
+}
+
+.service-image img,
+.service2-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Additional styling */
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .services .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service,
+  .service2,
+  .service-image,
+  .service2-image {
+    flex: 100%;
+    margin-bottom: 30px;
+  }
+}
+
 /* About section styles */
 .about {
   padding: 100px 0;
@@ -112,7 +194,7 @@ nav ul li a:hover {
 .contact {
   background-color: #333;
   color: #fff;
-  padding: 100px 0;
+  padding: 40px 0;
   text-align: center;
 }
 
