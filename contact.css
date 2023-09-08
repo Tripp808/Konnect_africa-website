@@ -1,0 +1,85 @@
+/* Section - Contact */
+
+#contact {
+  background-color: #f4f4f4;
+  padding: 100px 0;
+  text-align: center;
+  color: black;
+}
+
+.contact h2 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Styles for the contact form */
+.contact-form {
+  width: 45%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.contact-form label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #da1a1a;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ff0000;
+}
+
+/* Styles for contact information */
+.contact-info {
+  width: 45%;
+  text-align: left;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Style for the map container */
+.map-container {
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

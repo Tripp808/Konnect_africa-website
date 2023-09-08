@@ -7,6 +7,54 @@
   box-sizing: border-box;
 }
 
+/* layout of sections for smaller screens */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* responsive styles for images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* for smaller screens */
+h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
 /* Header styles */
 header {
   position: fixed;
@@ -14,7 +62,7 @@ header {
   left: 0;
   width: 100%;
   background-color: white;
-  padding: 4px 10%;
+  padding: 10px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +83,7 @@ nav ul {
 }
 
 nav ul li {
-  margin-right: 50px;
+  margin-right: 40px;
 }
 
 nav ul li a {
@@ -48,40 +96,113 @@ nav ul li a:hover {
   color: #da1a1a;
 }
 
-.logo {
-  display: inline-block;
-  margin-right: 10px;
-}
-
 .logo img {
   height: 68px;
   vertical-align: auto;
-  padding-left: -50%;
+  margin-right: 10px;
 }
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 49.4px;
+    gap: 10px;
+    flex-direction: column;
+    background-color: rgb(212, 18, 18);
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+  .logo {
+    position: fixed;
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Responsive hamburger-navigation styling */
+  body {
+    color: #e91717;
+  }
+  nav ul li a {
+    color: #ffffff;
+  }
+  nav ul li a:hover {
+    color: #000000;
+  }
+}
+
 /* Hero section styles */
 .hero {
   position: relative;
   background-image: linear-gradient(rgba(240, 255, 240, 0), #ca2d35),
     url("officemeet.jpg");
   background-size: cover;
-  color: #fff;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 350px 8%;
+  color: #fff; /* Text color for contrast */
+}
+.container {
+  max-width: 1200px;
+  padding: 20px;
 }
 .hero p {
   position: absolute;
   font-size: 15px;
   font-weight: 400;
-  margin: 40px 4% 40px;
+  margin: 2px 4%;
   margin-top: 5%;
   color: white;
   line-height: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .hero h2 {
+  font-size: 50px;
   position: absolute;
   top: 43%;
-  left: 28%;
-  font-size: 45px;
+  left: 20%;
   margin-bottom: 20px;
   color: white;
 }
@@ -95,9 +216,10 @@ nav ul li a:hover {
   background-color: #da1a1a;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 50px;
   transition: background-color 0.3s;
 }
+
 .btn2 {
   display: inline-block;
   bottom: 10%;
@@ -106,12 +228,15 @@ nav ul li a:hover {
   background-color: #da1a1a;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 50px;
   transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #e67e22;
+  background-color: #000000;
+}
+.btn2:hover {
+  background-color: #000000;
 }
 
 /* Services section styles */
@@ -167,6 +292,9 @@ nav ul li a:hover {
   width: 100%;
   margin: 0 auto;
 }
+a {
+  text-decoration: none;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -184,10 +312,89 @@ nav ul li a:hover {
   }
 }
 
-/* About section styles */
-.about {
-  padding: 100px 0;
+/* Core Values section styles */
+.core-values {
+  background-color: black;
+  color: white;
+  padding: 60px 10%;
   text-align: center;
+}
+
+.core-values h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.core-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.core-value h3 {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.core-value p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 10%;
+}
+
+.core-value-image-excellence {
+  width: 150px;
+  height: 150px;
+  background: url("excellence.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.core-value-image-sustainable {
+  width: 150px;
+  height: 150px;
+  background: url("sustainable.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.core-value-image-inclusion {
+  width: 150px;
+  height: 150px;
+  background: url("inclusion.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.core-value-image-innovation {
+  width: 150px;
+  height: 150px;
+  background: url("innovation.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.core-value-image img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 100%;
 }
 
 /* Contact section styles */
@@ -197,10 +404,156 @@ nav ul li a:hover {
   padding: 40px 0;
   text-align: center;
 }
+.contact p {
+  text-decoration: none;
+}
 
 /* Footer styles */
 footer {
   background-color: #f7f7f7;
   padding: 20px 0;
   text-align: center;
+}
+
+/* Responsive adjustments for the hero section */
+@media screen and (max-width: 320px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .hero h2 {
+    width: 80%;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 8px 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero p {
+    font-size: 12px;
+    margin: 40px 2%;
+    text-align: center;
+  }
+
+  .hero h2 {
+    width: 70%;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: -10%;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 8px 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin: 30px 2%;
+    text-align: center;
+  }
+
+  .hero h2 {
+    width: 70%;
+    font-size: 29px;
+    margin-top: -8%;
+
+    margin-left: -10%;
+  }
+
+  .btn {
+    font-size: 17px;
+    margin-bottom: -10%;
+    padding: 10px 24px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* Add more media queries for other screen sizes if needed */
+
+/* For larger screens like tablets and desktops */
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 100px 0;
+  }
+
+  .hero p {
+    font-size: 20px;
+    margin: 30px 1%;
+    text-align: center;
+  }
+
+  .hero h2 {
+    width: 80%;
+    margin-left: -8%;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 24px;
+    padding: 12px 28px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* Additional media queries for other screens */
+
+/* Media query for screens 1024px or smaller (including laptops) */
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero p {
+    font-size: 12px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .hero h2 {
+    width: 70%;
+    font-size: 22px;
+    margin-bottom: 20px;
+    top: 40%;
+    left: 20%;
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 10px 24px;
+    right: 50%;
+    transform: translateX(50%);
+  }
 }
