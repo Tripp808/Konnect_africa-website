@@ -213,7 +213,7 @@ nav ul li a:hover {
   bottom: 10%;
   right: 42%;
   padding: 10px 20px;
-  background-color: #da1a1a;
+  background-color: black;
   color: #fff;
   text-decoration: none;
   border-radius: 50px;
@@ -233,7 +233,7 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-  background-color: #000000;
+  background-color: #ce0000;
 }
 .btn2:hover {
   background-color: #000000;
@@ -346,7 +346,7 @@ a {
 .core-value-image-excellence {
   width: 150px;
   height: 150px;
-  background: url("excellence.jpg") no-repeat;
+  background: url("excellence2.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 100%;
@@ -358,7 +358,7 @@ a {
 .core-value-image-sustainable {
   width: 150px;
   height: 150px;
-  background: url("sustainable.jpg") no-repeat;
+  background: url("sustainable2.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 100%;
@@ -370,7 +370,7 @@ a {
 .core-value-image-inclusion {
   width: 150px;
   height: 150px;
-  background: url("inclusion.jpg") no-repeat;
+  background: url("inclusion2.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 100%;
@@ -382,7 +382,7 @@ a {
 .core-value-image-innovation {
   width: 150px;
   height: 150px;
-  background: url("innovation.jpg") no-repeat;
+  background: url("innovation2.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 100%;
