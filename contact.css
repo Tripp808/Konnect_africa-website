@@ -1,27 +1,26 @@
 /* Section - Contact */
-
 #contact {
   background-color: #f4f4f4;
-  padding: 100px;
+  padding: 75px 5%; /* Adjusted padding for responsiveness */
   text-align: center;
   color: black;
 }
 
 .contact h2 {
-  font-size: 48px;
+  font-size: 36px; /* Adjusted font size for smaller screens */
   font-weight: 800;
 }
 
 .contact-content {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column; /* Stacked content on smaller screens */
+  align-items: center;
 }
 
 /* Styles for the contact form */
-.contact-form {
-  width: 45%;
+.contact-form,
+.contact-info {
+  width: 100%; /* Full width on smaller screens */
   text-align: left;
   margin-bottom: 40px;
 }
@@ -60,26 +59,24 @@
   background-color: #ff0000;
 }
 
-/* Styles for contact information */
-.contact-info {
-  width: 45%;
-  text-align: left;
-}
-
-.contact-info h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.contact-info p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
 /* Style for the map container */
 .map-container {
   margin-top: 20px;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Full width on smaller screens */
+  height: 300px; /* Set a fixed height for the map */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  /* Adjust padding or font sizes for smaller screens as needed */
+  #contact {
+    padding: 40px 5%;
+  }
+
+  .contact h2 {
+    font-size: 24px;
+  }
 }
