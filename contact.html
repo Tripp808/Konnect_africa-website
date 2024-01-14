@@ -113,7 +113,9 @@
             // Enable the submitForm function only after the API has been initialized
             document
               .getElementById("contactForm")
-              .addEventListener("submit", submitForm);
+              .addEventListener("submit", function (event) {
+                submitForm(event);
+              });
           });
       }
 
