@@ -6,6 +6,7 @@
     <title>Contact - Konnect Africa</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="contact.css" />
+    <script src="https://apis.google.com/js/api.js"></script>
   </head>
   <body>
     <header>
@@ -24,9 +25,7 @@
           <li class="nav-item">
             <a href="Why.html" class="active">Why Us</a>
           </li>
-          <li class="nav-item">
-            <a href="location.html" class="active">Location</a>
-          </li>
+
           <li class="nav-item"><a href="team.html" class="active">Team</a></li>
           <li class="nav-item">
             <a href="contact.html" class="active">Contact</a>
@@ -45,7 +44,13 @@
         <h2>Contact Us</h2>
         <div class="contact-content">
           <div class="contact-form">
-            <form action="#" method="post" id="contactForm">
+            <!-- Update the form to include an ID for easy access -->
+            <form
+              action="#"
+              method="post"
+              id="contactForm"
+              onsubmit="submitForm(event)"
+            >
               <label for="name">Name:</label>
               <input type="text" id="name" name="name" required />
 
@@ -68,9 +73,10 @@
             <p><strong>Address:</strong> Private Bag, Juba, South Sudan</p>
             <p><strong>Email:</strong> info@konnectafrica.com</p>
             <p><strong>Phone:</strong> +211925956205</p>
+
             <div class="map-container">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDAwJzA3LjQiTiAwwrAwMycxNC4yIlc!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1870.2093662853586!2d31.582682176041198!3d4.856269996309401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16b5bc46c9efce11%3A0xfcbc7ba8f58bc387!2sPrivate%20Bag%2C%20Juba%2C%20South%20Sudan!5e0!3m2!1sen!2sus!4v1644030730985!5m2!1sen!2sus"
                 width="100%"
                 height="300"
                 style="border: 0"
@@ -90,5 +96,50 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+      // Function to handle form submission
+      function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Your Google Sheets spreadsheet ID
+        var spreadsheetId =
+          "1l19wDx1QKLIOurQVbySpXkjYdEYdDmwCBG6l4AMYeW4/edit#gid=0";
+
+        // Gather form data
+        var formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value,
+        };
+
+        // Call the function to append data to Google Sheets
+        appendDataToGoogleSheets(spreadsheetId, formData);
+      }
+
+      // Function to append data to Google Sheets using Google Sheets API
+      function appendDataToGoogleSheets(spreadsheetId, formData) {
+        gapi.client.sheets.spreadsheets.values
+          .append({
+            spreadsheetId: spreadsheetId,
+            range: "Sheet1", // Update with your sheet name
+            valueInputOption: "RAW",
+            insertDataOption: "INSERT_ROWS",
+            resource: {
+              values: [[formData.name, formData.email, formData.message]],
+            },
+          })
+          .then(
+            function (response) {
+              console.log("Data appended successfully:", response);
+              // You can provide user feedback here (e.g., show a thank you message)
+            },
+            function (error) {
+              console.error("Error appending data to Google Sheets:", error);
+              // Handle errors or show an error message to the user
+            }
+          );
+      }
+    </script>
   </body>
 </html>

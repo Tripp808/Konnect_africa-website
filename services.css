@@ -17,6 +17,8 @@
 .services h2 {
   font-size: 45px;
   font-weight: 800;
+  margin-left: 40%;
+  margin-bottom: 20px;
 }
 
 /* Styles for each service */
