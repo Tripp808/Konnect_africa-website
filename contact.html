@@ -96,12 +96,17 @@
     </footer>
 
     <script>
+      // Additional function to load Google Sheets API
+      function loadSheetsApi() {
+        gapi.client.load("sheets", "v4", initClient);
+      }
+
       function initClient() {
         gapi.client
           .init({
-            apiKey: null, // No need for an API key in this context
+            apiKey: null,
             clientId:
-              "579626644143-lad66ed7tp6pfc73ghfoi2l94k1848gh.apps.googleusercontent.com", // Replace with your OAuth client ID
+              "579626644143-lad66ed7tp6pfc73ghfoi2l94k1848gh.apps.googleusercontent.com",
             discoveryDocs: [
               "https://sheets.googleapis.com/$discovery/rest?version=v4",
             ],
@@ -121,11 +126,7 @@
       }
 
       function handleClientLoad() {
-        gapi.load("client", initClient);
-      }
-
-      function handleClientLoad() {
-        gapi.load("client", initClient);
+        gapi.load("client", loadSheetsApi);
       }
 
       // Function to handle form submission
